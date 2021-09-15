@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "module": "commonjs",
+    "moduleResolution": "node",    
+    "target": "ES6",
+    "resolveJsonModule": true
+  },
+  "exclude": ["node_modules"],
+}
