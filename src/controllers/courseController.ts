@@ -2,15 +2,28 @@ import { sendMail } from "services/mailer";
 
 /**
  * @swagger
- * /course/register:
+ * /api/course/register:
  *   post:
- *      parameters:
- *        - name: email
- *          in: query
- *          type: string
- *      responses:
- *       200:
- *         description: Response success message
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *              name:
+ *                type: string
+ *                required: true
+ *              phone:
+ *                type: string
+ *              email:
+ *                type: string
+ *                required: true
+ *              message:
+ *                type: string
+ *              course:
+ *                type: string
+ *                required: true
  */
 
 export const register = async (req, res): Promise<void> => {
