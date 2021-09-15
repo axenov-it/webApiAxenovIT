@@ -12,8 +12,6 @@ if [ "$RUN_TYPE" = "prod" ]; then
     docker-compose up -d --build
 elif [ "$RUN_TYPE" = "dev" ]; then
     echo "${start}BUILDING AND RUNNITNG CONTAINERS FOR DEVELOPMENT${end}"
-    docker-compose up -d --build nginx
-    docker-compose up -d --build redis
     docker-compose up -d --build mongo
     docker-compose up -d --build mailcatcher
     docker-compose run --rm -e MODE=development --service-ports node
