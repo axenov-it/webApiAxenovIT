@@ -4,6 +4,7 @@ import * as swaggerUi from "swagger-ui-express";
 import * as swaggerJsdoc from "swagger-jsdoc";
 import * as bodyParser from "body-parser";
 import * as path from "path";
+import * as cors from "cors";
 
 import { swaggerConfig } from "./config";
 import { setRoutes, mongoose } from "lib";
@@ -28,6 +29,8 @@ import { setRoutes, mongoose } from "lib";
     swaggerUi.serve,
     swaggerUi.setup(swaggerJsdoc(swaggerConfig))
   );
+
+  app.use(cors());
 
   app.use(router);
 
